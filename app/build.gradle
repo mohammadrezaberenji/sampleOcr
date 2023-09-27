@@ -1,0 +1,138 @@
+plugins {
+    id 'com.android.application'
+    id 'org.jetbrains.kotlin.android'
+    id 'com.google.gms.google-services'
+}
+
+android {
+    namespace 'com.example.myapplication'
+    compileSdk 33
+
+    defaultConfig {
+        applicationId "com.example.myapplication"
+        minSdk 24
+        targetSdk 33
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        vectorDrawables {
+            useSupportLibrary true
+        }
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+    kotlinOptions {
+        jvmTarget = '1.8'
+    }
+    buildFeatures {
+        compose true
+    }
+    composeOptions {
+        kotlinCompilerExtensionVersion '1.3.2'
+    }
+    packagingOptions {
+        resources {
+            excludes += '/META-INF/{AL2.0,LGPL2.1}'
+        }
+    }
+}
+
+dependencies {
+
+    implementation 'androidx.core:core-ktx:1.8.0'
+    implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.3.1'
+    implementation 'androidx.activity:activity-compose:1.5.1'
+    implementation platform('androidx.compose:compose-bom:2022.10.00')
+    implementation 'androidx.compose.ui:ui'
+    implementation 'androidx.compose.ui:ui-graphics'
+    implementation 'androidx.compose.ui:ui-tooling-preview'
+    implementation 'androidx.compose.material3:material3'
+    implementation 'com.google.firebase:firebase-database-ktx:20.2.2'
+    testImplementation 'junit:junit:4.13.2'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    androidTestImplementation platform('androidx.compose:compose-bom:2022.10.00')
+    androidTestImplementation 'androidx.compose.ui:ui-test-junit4'
+    debugImplementation 'androidx.compose.ui:ui-tooling'
+    debugImplementation 'androidx.compose.ui:ui-test-manifest'
+
+    implementation 'io.card:android-sdk:5.5.1'
+//    implementation 'com.google.firebase:firebase-ml-vision:24.1.0'
+    implementation 'com.google.android.gms:play-services-vision:20.1.3'
+
+
+//    implementation 'com.camerakit:camerakit:1.0.0-beta3.11'
+
+    implementation platform('com.google.firebase:firebase-bom:32.2.3')
+
+    def camerax_version = "1.2.2"
+    implementation "androidx.camera:camera-core:${camerax_version}"
+    implementation "androidx.camera:camera-camera2:${camerax_version}"
+    implementation "androidx.camera:camera-lifecycle:${camerax_version}"
+    implementation "androidx.camera:camera-video:${camerax_version}"
+
+    implementation "androidx.camera:camera-view:${camerax_version}"
+    implementation "androidx.camera:camera-extensions:${camerax_version}"
+
+
+    /// micro blink
+
+    implementation('com.microblink:blinkcard:2.8.1@aar') {
+        transitive = true
+    }
+
+
+    implementation 'ai.cardscan:insurance-cardscan:0.2.8'
+
+
+    // lead tools
+
+    implementation 'leadtools:annotations:22.0.1'
+    implementation 'leadtools:barcode:22.0.1'
+    implementation 'leadtools:demos:22.0.1'
+    implementation 'leadtools:dicom:22.0.1'
+    implementation 'leadtools:document.analytics:22.0.1'
+    implementation 'leadtools:document.sdk:22.0.1'
+    implementation 'leadtools:document.writer:22.0.1'
+    implementation 'leadtools:formats.document:22.0.1'
+    implementation 'leadtools:formats.raster.additional:22.0.1'
+    implementation 'leadtools:formats.raster.common:22.0.1'
+    implementation 'leadtools:formats.vector:22.0.1'
+    implementation 'leadtools:forms:22.0.1'
+    implementation 'leadtools:image.processing:22.0.1'
+    implementation 'leadtools:kernel:22.0.1'
+    implementation 'leadtools:ocr:22.0.1'
+    implementation 'leadtools:ocr.kernel:22.0.1'
+    implementation 'leadtools:ocr.languages.additional:22.0.1'
+    implementation 'leadtools:ocr.languages.asian:22.0.1'
+    implementation 'leadtools:ocr.languages.main:22.0.1'
+    implementation 'leadtools:pdf:22.0.1'
+    implementation 'leadtools:pdf.annotations.android:22.0.1'
+    implementation 'leadtools:pdf.annotations.converter:22.0.1'
+    implementation 'leadtools:substitutionfonts:22.0.1'
+    implementation 'leadtools:viewer.controls.android:22.0.1'
+    implementation "org.jetbrains.kotlin:kotlin-script-runtime:1.7.20"
+
+//    implementation 'com.github.mahimrocky:TextRecognizer:1.0.0'
+    implementation 'com.github.tamimattafi:pay-cards-android:1.0.0'
+
+
+    implementation 'com.github.jenly1314:camera-scan:1.0.1'
+    implementation'com.google.mlkit:text-recognition:16.0.0'
+    implementation'com.google.mlkit:vision-common:17.3.0'
+
+
+
+
+
+}
